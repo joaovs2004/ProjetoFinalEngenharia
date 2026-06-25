@@ -6,6 +6,9 @@ Projeto desenvolvido para a disciplina de **Engenharia de Software**, com o obje
 
 O sistema permite realizar o gerenciamento básico do processo de adoção de pets, possibilitando o cadastro de animais e adotantes, além do registro das adoções.
 
+## Modelo de Software:
+<img src="diagrama.png" alt="Modelo de Software" width="50%">
+
 ## Funcionalidades
 
 * Cadastro de pets;
@@ -28,6 +31,3 @@ O sistema permite realizar o gerenciamento básico do processo de adoção de pe
 2. Abra o projeto em uma IDE compatível com Java (IntelliJ IDEA, Eclipse ou VS Code).
 3. Execute a classe `Main`.
 4. Utilize o menu exibido no console para acessar as funcionalidades do sistema.
-
-## Modelo de Software:
-<img src="diagrama.png" alt="Modelo de Software" width="50%">
