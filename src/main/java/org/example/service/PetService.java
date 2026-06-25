@@ -1,7 +1,6 @@
 package org.example.service;
 
 import org.example.model.Pet;
-import org.example.repository.InMemoryPetRepository;
 import org.example.repository.PetRepository;
 
 import java.util.ArrayList;
@@ -10,8 +9,8 @@ import java.util.List;
 public class PetService {
     private final PetRepository repository;
 
-    public PetService() {
-        this.repository = new InMemoryPetRepository();
+    public PetService(PetRepository repository) {
+        this.repository = repository;
     }
 
     public void cadastrarPet(Pet pet) {

@@ -12,8 +12,8 @@ import java.util.List;
 public class AdocaoService {
     private final AdocaoRepository repository;
 
-    public AdocaoService() {
-        this.repository = new InMemoryAdocaoRepository();
+    public AdocaoService(AdocaoRepository repository) {
+        this.repository = repository;
     }
 
     public void registrarAdocao(Long id, Pet pet, Adotante adotante) {

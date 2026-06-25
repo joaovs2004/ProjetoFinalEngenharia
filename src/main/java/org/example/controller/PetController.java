@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.model.Pet;
+import org.example.repository.InMemoryPetRepository;
 import org.example.service.PetService;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public class PetController {
     private final PetService petService;
 
     public PetController() {
-        this.petService = new PetService();
+        this.petService = new PetService(new InMemoryPetRepository());
     }
 
     public void cadastrarPet(Long id, String nome, String especie, Integer idade) {

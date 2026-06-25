@@ -9,8 +9,8 @@ import java.util.List;
 public class AdotanteService {
     private final AdotanteRepository repository;
 
-    public AdotanteService() {
-        this.repository = new InMemoryAdotanteRepository();
+    public AdotanteService(AdotanteRepository repository) {
+        this.repository = repository;
     }
 
     public void cadastrarAdotante(Adotante adotante) {

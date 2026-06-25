@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.model.Adotante;
+import org.example.repository.InMemoryAdotanteRepository;
 import org.example.service.AdotanteService;
 
 import java.util.List;
@@ -9,7 +10,7 @@ public class AdotanteController {
     private final AdotanteService adotanteService;
 
     public AdotanteController() {
-        this.adotanteService = new AdotanteService();
+        this.adotanteService = new AdotanteService(new InMemoryAdotanteRepository());
     }
 
     public void cadastrarAdotante(Long id, String nome, String telefone, String email) {
