@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.controller.PetController;
+
 public class Pet {
 
     private Long id;
@@ -11,8 +13,11 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(Long id, String nome, String especie, Integer idade, boolean adotado) {
-        this.id = id;
+    static long qtdPets = 0;
+
+
+    public Pet(String nome, String especie, Integer idade, boolean adotado) {
+        this.id = ++qtdPets;
         this.nome = nome;
         this.especie = especie;
         this.idade = idade;

@@ -13,8 +13,8 @@ public class AdotanteController {
         this.adotanteService = new AdotanteService(new InMemoryAdotanteRepository());
     }
 
-    public void cadastrarAdotante(Long id, String nome, String telefone, String email) {
-        Adotante adotante = new Adotante(id, nome, telefone, email);
+    public void cadastrarAdotante(String nome, String telefone, String email) {
+        Adotante adotante = new Adotante(nome, telefone, email);
         adotanteService.cadastrarAdotante(adotante);
     }
 

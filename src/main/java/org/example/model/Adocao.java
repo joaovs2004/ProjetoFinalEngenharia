@@ -12,8 +12,10 @@ public class Adocao {
     public Adocao() {
     }
 
-    public Adocao(Long id, Pet pet, Adotante adotante, LocalDate dataAdocao) {
-        this.id = id;
+    static long idCounter = 0;
+
+    public Adocao(Pet pet, Adotante adotante, LocalDate dataAdocao) {
+        this.id = ++idCounter;
         this.pet = pet;
         this.adotante = adotante;
         this.dataAdocao = dataAdocao;

@@ -29,8 +29,6 @@ public class Main {
             switch (opcao) {
 
                 case 1 -> {
-                    IO.print("ID: ");
-                    long id = Long.parseLong(IO.readln());
 
                     IO.print("Nome: ");
                     String nome = IO.readln();
@@ -41,7 +39,7 @@ public class Main {
                     IO.print("Idade: ");
                     int idade = Integer.parseInt(IO.readln());
 
-                    petController.cadastrarPet(id, nome, especie, idade);
+                    petController.cadastrarPet( nome, especie, idade);
 
                     IO.println("Pet cadastrado!");
                 }
@@ -55,8 +53,6 @@ public class Main {
                 }
 
                 case 3 -> {
-                    IO.print("ID: ");
-                    long id = Long.parseLong(IO.readln());
 
                     IO.print("Nome: ");
                     String nome = IO.readln();
@@ -67,7 +63,7 @@ public class Main {
                     IO.print("Email: ");
                     String email = IO.readln();
 
-                    adotanteController.cadastrarAdotante(id, nome, telefone, email);
+                    adotanteController.cadastrarAdotante(nome, telefone, email);
 
                     IO.println("Adotante cadastrado!");
                 }
@@ -81,8 +77,6 @@ public class Main {
                 }
 
                 case 5 -> {
-                    IO.print("ID da Adoção: ");
-                    long id = Long.parseLong(IO.readln());
 
                     IO.print("ID do Pet: ");
                     long petId = Long.parseLong(IO.readln());
@@ -93,7 +87,7 @@ public class Main {
                     var pet = petController.buscarPet(petId);
                     var adotante = adotanteController.buscarAdotante(adotanteId);
 
-                    adocaoController.registrarAdocao(id, pet, adotante);
+                    adocaoController.registrarAdocao(pet, adotante);
 
                     IO.println("Adoção registrada!");
                 }

@@ -17,7 +17,7 @@ class PetServiceTest {
         PetRepository repository = mock(InMemoryPetRepository.class);
         PetService service = new PetService(repository);
 
-        Pet pet = new Pet(1L, "Rex", "Cachorro", 3, false);
+        Pet pet = new Pet("Rex", "Cachorro", 3, false);
 
         service.cadastrarPet(pet);
 
@@ -32,7 +32,7 @@ class PetServiceTest {
 
         when(repository.listarTodos())
                 .thenReturn(List.of(
-                        new Pet(1L, "Rex", "Cachorro", 3, false)
+                        new Pet("Rex", "Cachorro", 3, false)
                 ));
 
         List<Pet> pets = service.listarPets();

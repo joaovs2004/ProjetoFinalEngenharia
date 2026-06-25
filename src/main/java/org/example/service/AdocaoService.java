@@ -16,7 +16,7 @@ public class AdocaoService {
         this.repository = repository;
     }
 
-    public void registrarAdocao(Long id, Pet pet, Adotante adotante) {
+    public void registrarAdocao(Pet pet, Adotante adotante) {
         if (pet.isAdotado()) {
             throw new IllegalArgumentException("O pet já foi adotado.");
         }
@@ -24,7 +24,6 @@ public class AdocaoService {
         pet.setAdotado(true);
 
         Adocao adocao = new Adocao(
-                id,
                 pet,
                 adotante,
                 LocalDate.now()

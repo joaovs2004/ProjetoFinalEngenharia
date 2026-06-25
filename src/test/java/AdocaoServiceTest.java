@@ -18,10 +18,10 @@ class AdocaoServiceTest {
         AdocaoRepository repository = mock(AdocaoRepository.class);
         AdocaoService service = new AdocaoService(repository);
 
-        Pet pet = new Pet(1L, "Rex", "Cachorro", 3, false);
-        Adotante adotante = new Adotante(1L, "João", "9999", "email");
+        Pet pet = new Pet("Rex", "Cachorro", 3, false);
+        Adotante adotante = new Adotante("João", "9999", "email");
 
-        service.registrarAdocao(1L, pet, adotante);
+        service.registrarAdocao(pet, adotante);
 
         assertTrue(pet.isAdotado());
         verify(repository).salvar(any(Adocao.class));
@@ -46,10 +46,10 @@ class AdocaoServiceTest {
         AdocaoRepository repository = mock(AdocaoRepository.class);
         AdocaoService service = new AdocaoService(repository);
 
-        Pet pet = new Pet(1L, "Rex", "Cachorro", 3, true);
-        Adotante adotante = new Adotante(1L, "João", "9999", "email");
+        Pet pet = new Pet("Rex", "Cachorro", 3, true);
+        Adotante adotante = new Adotante("João", "9999", "email");
 
         assertThrows(IllegalArgumentException.class,
-                () -> service.registrarAdocao(1L, pet, adotante));
+                () -> service.registrarAdocao(pet, adotante));
     }
 }

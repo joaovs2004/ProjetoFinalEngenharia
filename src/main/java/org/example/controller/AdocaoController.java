@@ -15,8 +15,8 @@ public class AdocaoController {
         this.adocaoService = new AdocaoService(new InMemoryAdocaoRepository());
     }
 
-    public void registrarAdocao(Long id, Pet pet, Adotante adotante) {
-        adocaoService.registrarAdocao(id, pet, adotante);
+    public void registrarAdocao(Pet pet, Adotante adotante) {
+        adocaoService.registrarAdocao(pet, adotante);
     }
 
     public List<Adocao> listarAdocoes() {

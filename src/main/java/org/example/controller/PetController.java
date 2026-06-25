@@ -14,8 +14,8 @@ public class PetController {
         this.petService = new PetService(new InMemoryPetRepository());
     }
 
-    public void cadastrarPet(Long id, String nome, String especie, Integer idade) {
-        Pet pet = new Pet(id, nome, especie, idade, false);
+    public void cadastrarPet(String nome, String especie, Integer idade) {
+        Pet pet = new Pet(nome, especie, idade, false);
         petService.cadastrarPet(pet);
     }
 

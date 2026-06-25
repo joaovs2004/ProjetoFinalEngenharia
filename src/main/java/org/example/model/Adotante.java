@@ -10,8 +10,10 @@ public class Adotante {
     public Adotante() {
     }
 
-    public Adotante(Long id, String nome, String telefone, String email) {
-        this.id = id;
+    static long qtdAdotantes = 0;
+
+    public Adotante(String nome, String telefone, String email) {
+        this.id = ++qtdAdotantes;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;

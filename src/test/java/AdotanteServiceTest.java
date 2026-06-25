@@ -17,7 +17,7 @@ class AdotanteServiceTest {
         AdotanteRepository repository = mock(InMemoryAdotanteRepository.class);
         AdotanteService service = new AdotanteService(repository);
 
-        Adotante adotante = new Adotante(1L, "João", "9999", "joao@email.com");
+        Adotante adotante = new Adotante("João", "9999", "joao@email.com");
 
         service.cadastrarAdotante(adotante);
 
@@ -31,7 +31,7 @@ class AdotanteServiceTest {
         AdotanteService service = new AdotanteService(repository);
 
         when(repository.listarTodos())
-                .thenReturn(List.of(new Adotante(1L, "João", "9999", "email")));
+                .thenReturn(List.of(new Adotante("João", "9999", "email")));
 
         List<Adotante> result = service.listarAdotantes();
 
@@ -45,7 +45,7 @@ class AdotanteServiceTest {
         AdotanteService service = new AdotanteService(repository);
 
         when(repository.listarTodos())
-                .thenReturn(List.of(new Adotante(1L, "João", "9999", "email")));
+                .thenReturn(List.of(new Adotante("João", "9999", "email")));
 
         Adotante result = service.buscarAdotante(1L);
 
