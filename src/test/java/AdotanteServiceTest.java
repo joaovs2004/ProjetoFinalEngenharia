@@ -44,10 +44,12 @@ class AdotanteServiceTest {
         AdotanteRepository repository = mock(InMemoryAdotanteRepository.class);
         AdotanteService service = new AdotanteService(repository);
 
-        when(repository.listarTodos())
-                .thenReturn(List.of(new Adotante("João", "9999", "email")));
+        Adotante adotante = new Adotante("João", "9999", "email");
 
-        Adotante result = service.buscarAdotante(1L);
+        when(repository.listarTodos())
+                .thenReturn(List.of(adotante));
+
+        Adotante result = service.buscarAdotante(adotante.getId());
 
         assertNotNull(result);
         assertEquals("João", result.getNome());
