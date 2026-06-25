@@ -105,6 +105,7 @@ public class Main {
                                     a.getId()
                                             + " | Pet: " + a.getPet().getNome()
                                             + " | Adotante: " + a.getAdotante().getNome()
+                                            + " | Data Adoção: " + a.getDataAdocao()
                             ));
                 }
 
